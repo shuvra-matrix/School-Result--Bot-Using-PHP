@@ -33,7 +33,7 @@ if ($message == '/start') {
     }
     else
     {
-        $msg = "Invalid Roll Number";
+        $msg = "Please Enter A Valid Roll Number";
     }
 }
 
