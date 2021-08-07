@@ -10,7 +10,8 @@ $CHAT_ID = $data->message->chat->id;
 $message = $data->message->text;
 $first_name = $data->message->from->first_name;
 echo $first_name;
-if ($message == '/start') {
+if ($message == '/start') 
+{
     $msg = "Welcome $first_name. <br> Please enter your roll Number";
 } else {
     $message = mysqli_real_escape_string($connect,$message);
@@ -27,7 +28,7 @@ if ($message == '/start') {
     }
 }
 
-$URL = "https://api.telegram.org/bot$TOKEN/sendMessage?chat_id=$CHAT_ID&text=$msg&parse_mode=html";
+$URL = "https://api.telegram.org/bot$TOKEN/sendMessage?chat_id=$CHAT_ID&text=$msg";
 file_get_contents($URL);
 
 ?>
