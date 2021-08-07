@@ -11,8 +11,6 @@ $message = $data->message->text;
 $first_name = $data->message->from->first_name;
 
 
-
-
 if ($message == '/start') {
     $msg = "Welcome $first_name. %0APlease enter your roll Number";
 } else {
