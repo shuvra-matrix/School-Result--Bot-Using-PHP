@@ -13,8 +13,8 @@ if ($message == '/start') {
     $msg = "Welcome. Please enter your roll Number";
 } else {
     $message = mysqli_real_escape_string($connect,$message);
-    $query = "SELECT * FROM students WHERE roll_number='$message'";
-    $result = mysqli_query($connect,$query);
+    $query = "SELECT * FROM students WHERE roll_no='$message'";
+    $result = mysqli_query($connect,$query) ;
     $row = mysqli_fetch_assoc($result);
     if($row)
     {   $name = $row['name'];
