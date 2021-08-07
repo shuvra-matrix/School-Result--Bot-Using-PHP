@@ -27,7 +27,7 @@ if ($message == '/start') {
     }
 }
 
-$URL = "https://api.telegram.org/bot$TOKEN/sendMessage?chat_id=$CHAT_ID&text=$msg&parse_mode=html";
+$URL = "https://api.telegram.org/bot$TOKEN/sendMessage?chat_id=$CHAT_ID&text=$msg";
 file_get_contents($URL);
 
 ?>
