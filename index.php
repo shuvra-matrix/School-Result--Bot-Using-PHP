@@ -23,12 +23,11 @@ if ($message == '/start') {
         $id= $row['id'];
         $query = "SELECT * FROM results WHERE s_id='$id'";
         $result = mysqli_query($connect,$query);
-        $res ="<ul>";
+        $res ="";
         while($row=mysqli_fetch_assoc($result))
         {
-            $res .= "<li>".$row['subject']. " :- ". $row['score']. "</li>";
+            $res .= $row['subject']. ":- ". $row['score']."%0A";
         }
-        $res .= "</ul>";
         $msg = "<b>$name</b> your semester result %0A ";
         $msg .= $res;
     }
