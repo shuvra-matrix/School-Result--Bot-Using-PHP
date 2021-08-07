@@ -23,9 +23,10 @@ if ($message == '/start') {
         $id= $row['id'];
         $query = "SELECT * FROM results WHERE s_id='$id'";
         $result = mysqli_query($connect,$query);
+        $res ="";
         while($row=mysqli_fetch_assoc($result))
         {
-            $res = $row['subject']. ":- ". $row['score']."%0A";
+            $res .= $row['subject']. ":- ". $row['score']."%0A";
         }
         $msg = "<b>$name</b> your semester result %0A ";
         $msg .= $res;
@@ -36,7 +37,7 @@ if ($message == '/start') {
     }
 }
 
-$URL = "https://api.telegram.org/bot$TOKEN/sendMessage?chat_id=$CHAT_ID&text=$msg";
+$URL = "https://api.telegram.org/bot$TOKEN/sendMessage?chat_id=$CHAT_ID&text=$msg&parse_mode=html";
 file_get_contents($URL);
 
 ?>
